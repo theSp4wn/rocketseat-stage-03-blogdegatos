@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  --color-base-gray-700: #202024;
+  --color-base-gray-800: #121214;
+  --color-base-blue-600: #387E96;
+  --color-base-blue-700: #065E7C;
+  --color-base-white: #FFF;
+}
+
+html, body, input {
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--color-base-white);
+  color: var(--color-base-gray-800);
+}
+
+#app {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+main {
+  overflow-y: scroll;
+  background-color: var(--color-base-white);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: var(--color-base-blue-700);
+  padding: 1.2rem 2.8rem;
+}
+
+header form {
+  flex: 1;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.20);
+  border: 0;
+  border-radius: .4rem;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--color-base-white);
+}
+
+.avatar {
+  width: 4.2rem;
+  height: 4.2rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.item {
+  width: 100%;
+}
+
+.item > img {
+  width: 100%;
+  margin: 0;
+  border-radius: .5rem;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.item h2 {
+  padding: 3.1rem 2.2rem .8rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 160%;
+  color: var(--color-base-gray-700);
+}
+
+.item .tags {
+  display: flex;
+  padding: 0 2.2rem 3.1rem;
+  gap: 1.2rem;
+}
+
+.item p  {
+  padding: 0 2.2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 160%;
+  color: var(--color-base-gray-800);
+}
+
+.related h1 {
+  padding: 3.4rem 2.2rem 3.2rem;
+}
+
+.related img {
+  width: 15rem;
+  height: 8.4rem;
+  margin: 0;
+  border-radius: .5rem;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.related-item {
+  display: flex;
+  padding: 0 2.2rem 2rem;
+  align-items: center;
+}
+
+.related-item .resume {
+  padding: 0 1.6rem;
+}
+
+.related-item .resume h2 {
+  color: var(--color-base-gray-700);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+.related-item .resume p {
+  color: var(--color-base-gray-800);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+footer {
+  background-color: var(--color-base-blue-600);
+  color: var(--color-base-white);
+  padding: 1.6rem;
+  --startY: 100%;
+  animation: move .2s;
+}
+
+footer p {
+  text-align: center;
+}
