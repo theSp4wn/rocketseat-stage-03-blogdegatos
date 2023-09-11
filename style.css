@@ -158,3 +158,72 @@ footer {
 footer p {
   text-align: center;
 }
+
+@media (min-width: 1200px) {
+  
+  header {
+    padding: 1.2rem 11.2rem;
+    justify-content: center;
+  }
+
+  header form {
+    max-width: 100%;
+  }  
+
+  .container {
+    padding: 4.4rem 10.9rem 0 10.9rem;
+    display: grid;
+    grid-template-areas: 
+    "post post related";
+    height: 100%;
+  }
+  
+  .post {
+    grid-area: post;
+  }
+
+  .item > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .item h2 {
+    padding: 0;
+  }
+  
+  .item .text-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.2rem 0;
+  }
+
+  .item .tags {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .item p  {
+    padding: 0 0 3.9rem;
+  }
+
+  .related {
+    padding: 0 3.4rem 0;
+    grid-area: related;
+  }
+
+  .related h1 {
+    padding: 0 0 2.2rem;
+  }
+
+  .related-item {
+    padding: 0 0 2.2rem;
+  }
+
+  .related-item .resume {
+    padding: 0 1.6rem 1.6rem;
+  }
+
+}
