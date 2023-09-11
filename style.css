@@ -8,10 +8,12 @@
 
 :root {
   font-size: 62.5%;
-  --color-base-gray-700: #202024;
-  --color-base-gray-800: #121214;
-  --color-base-blue-600: #387E96;
-  --color-base-blue-700: #065E7C;
+  --hue: 195;
+  --hue-text: 240;
+  --color-base-gray-700: hsl(var(--hue-text), 6%, 13%);
+  --color-base-gray-800: hsl(var(--hue-text), 5%, 7%);
+  --color-base-blue-600: hsl(var(--hue), 46%, 40%);
+  --color-base-blue-700: hsl(var(--hue), 91%, 25%);
   --color-base-white: #FFF;
 }
 
@@ -88,6 +90,10 @@ header form {
   object-fit: cover;
 }
 
+.item > img:hover {
+  filter: hue-rotate(10deg) contrast(101%) saturate(130%);
+}
+
 .item h2 {
   padding: 3.1rem 2.2rem .8rem;
   font-size: 2.4rem;
@@ -100,6 +106,14 @@ header form {
   display: flex;
   padding: 0 2.2rem 3.1rem;
   gap: 1.2rem;
+}
+
+.tags #like:hover {
+  filter: hue-rotate(280deg) contrast(101%) saturate(250%);
+}
+
+.tags #dislike:hover {
+  filter: hue-rotate(180deg) contrast(101%) saturate(200%);
 }
 
 .item p  {
@@ -122,6 +136,12 @@ header form {
   aspect-ratio: 16/9;
   object-fit: cover;
 }
+
+.related img:hover {
+  filter: hue-rotate(5deg) saturate(200%);
+  transform: scale(1.1) rotate(-2deg);
+}
+
 
 .related-item {
   display: flex;
@@ -151,8 +171,6 @@ footer {
   background-color: var(--color-base-blue-600);
   color: var(--color-base-white);
   padding: 1.6rem;
-  --startY: 100%;
-  animation: move .2s;
 }
 
 footer p {
@@ -226,4 +244,46 @@ footer p {
     padding: 0 1.6rem 1.6rem;
   }
 
+}
+
+@keyframes move {
+  from {
+    transform: translateY(var(--startY));
+  }
+}
+
+header nav, form, img {
+  --startY: -100%;
+  animation: move .3s;
+}
+
+footer p {
+  --startY: 100%;
+  animation: move .2s;
+}
+
+@keyframes apper {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1.0);
+  }
+}
+
+.post {
+  --delay: .2s;
+  animation: apper .4s var(--delay) backwards;
+}
+
+.related {
+  --delay: .2s;
+  animation: apper .4s var(--delay) backwards;
+}
+
+.related-item {
+  --delay: .2s;
+  animation: apper .4s var(--delay) backwards;
 }
